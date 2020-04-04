@@ -1,0 +1,14 @@
+name: Core
+main: net.micrlink.core.Core
+version: 1.0
+commands:
+  afk: 
+    description: Away From Keyboard
+  creative:
+    description: Go to the creative world.
+  survival:
+    description: Teleport back to your place in survival overworld.
+  dev:
+    description: debug message
+  togglehud:
+    description: Toggle HUD
