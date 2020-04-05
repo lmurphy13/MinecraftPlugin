@@ -20,9 +20,12 @@ import net.micrlink.core.Core;
 public class ScoreboardManager {
 
 	private Guild mainGuild;
+	private final Scoreboard emptyScoreboard;
 
 	public ScoreboardManager() {
 		this.mainGuild = DiscordSRV.getPlugin().getMainGuild();
+		this.emptyScoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
+
 		Core plugin = Core.get();
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
 			@Override
@@ -96,10 +99,10 @@ public class ScoreboardManager {
 
 	private Scoreboard createScoreboard(Player player) {
 		if (!DiscordSRV.isReady || getMembers().isEmpty())
-			return null;
+			return emptyScoreboard;
 
 		if (!Core.getUserSettingsManager().showScoreboard(player))
-			return null;
+			return emptyScoreboard;
 
 		org.bukkit.scoreboard.ScoreboardManager manager = Bukkit.getScoreboardManager();
 		Scoreboard board = manager.getNewScoreboard();
