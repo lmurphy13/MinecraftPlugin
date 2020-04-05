@@ -27,14 +27,15 @@ public class homeCmd implements CommandExecuter {
 				survivalManager.saveHomeLocation(p, null);
 				return true;
 			}
-        }
-        
-        if (cmd.getName().equalsIgnoreCase("sethome")) {
+		}
+		
+		if (cmd.getName().equalsIgnoreCase("sethome")) {
             if (sender instanceof Player) {
                 Player p = (Player) sender;
                 Location location = survivalManager.setHomeLocation(p)
             }
         }
+       
 		return false;
 	}
 
