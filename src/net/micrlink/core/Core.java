@@ -144,7 +144,7 @@ public class Core extends JavaPlugin {
 		getCommand("survival").setExecutor(new survivalCmd());
 		getCommand("togglehud").setExecutor(new togglehud());
 		getCommand("home").setExecutor(new homeCmd());
-		getCommmand("sethome").setExecutor(new homeCmd());
+		getCommand("sethome").setExecutor(new homeCmd());
 	}
 
 	private void registerEvents() {

@@ -20,25 +20,23 @@ public class homeCmd implements CommandExecuter {
 				Location location = survivalManager.getHomeLocation(p);
 				if (location == null) {
 					p.sendMessage(
-							"�cYou have no saved home location. If you think this is an error, you have a long walk back!");
+							"§cYou have no saved home location. If you think this is an error, you have a long walk back!");
 					return true;
 				}
 				p.teleport(location);
-				survivalManager.saveHomeLocation(p, null);
 				return true;
 			}
 		}
 		
 		if (cmd.getName().equalsIgnoreCase("sethome")) {
-            if (sender instanceof Player) {
-                Player p = (Player) sender;
-				Location location = survivalManager.setHomeLocation(p)
+          		if (sender instanceof Player) {
+               			Player p = (Player) sender;
+				Location location = survivalManager.saveHomeLocation(p)
 				p.sendMessage("Set home location!");
 				return true;
-            }
-        }
-       
-		return false;
+           		}
+		}
+       		return false;
 	}
 
 }
