@@ -32,7 +32,9 @@ public class homeCmd implements CommandExecuter {
 		if (cmd.getName().equalsIgnoreCase("sethome")) {
             if (sender instanceof Player) {
                 Player p = (Player) sender;
-                Location location = survivalManager.setHomeLocation(p)
+				Location location = survivalManager.setHomeLocation(p)
+				p.sendMessage("Set home location!");
+				return true;
             }
         }
        
