@@ -29,6 +29,17 @@ public class SurvivalManager implements Listener {
 
 	}
 
+	public void saveHomeLocation(Player player) {
+		Location location = player.getLocation();
+		UserSettingsManager settings = Core.getUserSettingsManager();
+		settings.set(player, "home_location", Util.locToString(location));
+	}
+
+	public Location getHomeLocation(Player player) {
+		UserSettingsManager settings = Core.getUserSettingsManager();
+		return Util.getStringLocation((String) settings.get(player, "home_location", null));
+	}
+
 	@EventHandler
 	public void onPlayerTeleport(PlayerTeleportEvent e) {
 		Player p = e.getPlayer();
@@ -37,7 +48,7 @@ public class SurvivalManager implements Listener {
 
 		if (Core.SURVIVAL_WORLDS.contains(fromWorldName) && !Core.SURVIVAL_WORLDS.contains(toWorldName)) {
 			saveSurvivalLocation(p, e.getFrom());
-			p.sendMessage("§7Your survival location has been saved to file. To return there type §b/survival");
+			p.sendMessage("ï¿½7Your survival location has been saved to file. To return there type ï¿½b/survival");
 		}
 	}
 

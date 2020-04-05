@@ -18,6 +18,7 @@ import net.micrlink.core.cmds.afkCmd;
 import net.micrlink.core.cmds.creativeCmd;
 import net.micrlink.core.cmds.devCmd;
 import net.micrlink.core.cmds.survivalCmd;
+import net.micrlink.core.cmds.homeCmd;
 import net.micrlink.core.cmds.togglehud;
 import net.micrlink.core.listener.PlayerBedEnter;
 import net.micrlink.core.listener.PlayerChat;
@@ -122,7 +123,7 @@ public class Core extends JavaPlugin {
 		if (yaw > 225 && yaw < 315)
 			dir = "E";
 
-		String message = "§6XYZ §f" + x + " " + y + " " + z + "    §6" + dir + "    " + h + ":" + m;
+		String message = "ï¿½6XYZ ï¿½f" + x + " " + y + " " + z + "    ï¿½6" + dir + "    " + h + ":" + m;
 		ActionBarAPI.sendActionBar(player, message);
 	}
 
@@ -142,6 +143,8 @@ public class Core extends JavaPlugin {
 		getCommand("dev").setExecutor(new devCmd());
 		getCommand("survival").setExecutor(new survivalCmd());
 		getCommand("togglehud").setExecutor(new togglehud());
+		getCommand("home").setExecutor(new homeCmd());
+		getCommmand("sethome").setExecutor(new homeCmd());
 	}
 
 	private void registerEvents() {
