@@ -1,14 +1,23 @@
 name: Core
 main: net.micrlink.core.Core
-version: 1.0
+version: 1.3.1
+description: Custom features for a survival, skyblock, creative server.
+load: STARTUP
+api-version: 1.15
+author: micrlink
+softdepend: [DiscordSRV]
 commands:
   afk: 
-    description: Away From Keyboard
-  creative:
-    description: Go to the creative world.
+    description: Toggle your Away-From-Keyboard status
+    usage: "/afk"
+  creative: 
+    description: Teleport to the creative plots world.
+    usage: "/creative"
   survival:
-    description: Teleport back to your place in survival overworld.
+    description: After leaving the survival world. Teleport back to your place you left from.
+    usage: "/survival"
   dev:
-    description: debug message
+    description: Developer testing command
   togglehud:
-    description: Toggle HUD
+    description: Toggle HUD like the scoreboard and action bar
+    usage: "/togglehud [hudtype]"
