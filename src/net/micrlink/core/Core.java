@@ -3,6 +3,7 @@ package net.micrlink.core;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -84,6 +85,8 @@ public class Core extends JavaPlugin {
 				world.setThundering(false);
 			}
 		}, 20, 20);
+
+		getLogger().log(Level.INFO, "Core has loaded successfully!");
 	}
 
 	public void updateActionBar(Player player) {
