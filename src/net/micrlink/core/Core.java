@@ -123,7 +123,7 @@ public class Core extends JavaPlugin {
 		if (yaw > 225 && yaw < 315)
 			dir = "E";
 
-		String message = "�6XYZ �f" + x + " " + y + " " + z + "    �6" + dir + "    " + h + ":" + m;
+		String message = "§6XYZ §f" + x + " " + y + " " + z + "    §6" + dir + "    " + h + ":" + m;
 		ActionBarAPI.sendActionBar(player, message);
 	}
 

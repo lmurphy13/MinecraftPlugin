@@ -48,7 +48,7 @@ public class SurvivalManager implements Listener {
 
 		if (Core.SURVIVAL_WORLDS.contains(fromWorldName) && !Core.SURVIVAL_WORLDS.contains(toWorldName)) {
 			saveSurvivalLocation(p, e.getFrom());
-			p.sendMessage("�7Your survival location has been saved to file. To return there type �b/survival");
+			p.sendMessage("§7Your survival location has been saved to file. To return there type §b/survival");
 		}
 	}
 
